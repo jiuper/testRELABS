@@ -9,10 +9,10 @@ import {Header} from "../widgets/ui/Header/Header";
 
 export const Routing = () => {
 
-    // const href = useNavigate()
-    // useEffect(() => {
-    //     if (window.location.pathname !== ROUTES.Login) href(ROUTES.Login);
-    // }, [])
+     const href = useNavigate()
+     useEffect(() => {
+         if (window.location.pathname !== ROUTES.Login) href(ROUTES.Login);
+     }, [])
 
     return (
         <div className="wrapper">
