@@ -1,0 +1,8 @@
+.point{
+  border: 2px solid transparent;
+}
+
+.point:hover{
+  border-bottom: 2px solid rgb(78, 130, 234);
+  transition: 0.3s;
+}

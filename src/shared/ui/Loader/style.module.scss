@@ -1,0 +1,26 @@
+//loader
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .backdrop {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    position: absolute;
+
+    .container {
+      display: flex;
+      justify-content: center;
+      margin: 15rem auto;
+    }
+  }
+}

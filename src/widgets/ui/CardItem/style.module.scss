@@ -1,0 +1,108 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 15px;
+  background: #FFFFFF;
+  border-radius: 25px;
+  width: 250px;
+  margin-top: 40px;
+
+  &-h {
+    position: relative;
+
+    .c-img {
+      width: 100%;
+    }
+
+    .c-sale {
+      position: absolute;
+      background: white;
+      font-weight: bold;
+      padding: 0 5px;
+      font-size: 14px;
+      border-radius: 25px;
+      top: 92%;
+      color: #de07fd;
+    }
+  }
+
+  &-b {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    .b-price {
+      display: flex;
+      gap: 15px;
+      font-weight: bold;
+      font-size: 18px;
+      align-items: flex-end;
+
+      .b-nosale {
+        text-decoration: line-through;
+        font-size: 14px;
+        color: #999999;
+      }
+    }
+
+    .b-icons {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+      .i-title {
+        color: #de07fd;
+        font-weight: bold;
+      }
+    }
+
+    .b-breadcrumbs {
+    }
+
+    .b-rating {
+      display: flex;
+      align-items: center;
+      color: #999999;
+      gap: 8px;
+      font-size: 14px;
+
+      .r-btn {
+        color: #de07fd;
+      }
+    }
+
+    .b-credit {
+      text-transform: uppercase;
+      width: 60%;
+      font-size: 10px;
+      font-weight: bold;
+      background: rgb(145, 226, 194);
+      background: linear-gradient(90deg, rgba(145, 226, 194, 0.5411414565826331) 10%, rgba(191, 198, 36, 0.4543067226890757) 39%);
+      border-radius: 25px;
+      padding: 10px 15px;
+    }
+
+    .b-btn {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      .btn-buy {
+        background: #de07fd;
+        color: #FFFFFF;
+        padding: 5px 15px;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+
+      .icon-like {
+        fill: #de07fd;
+      }
+    }
+  }
+
+}
+
+

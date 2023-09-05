@@ -1,0 +1,31 @@
+.form__auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 1.5em;
+  width: 100%;
+
+  &-heading {
+    font-size: 32px;
+    line-height: 1.43;
+  }
+
+  &-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+
+    .form__auth-input {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .error {
+        color: red;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,21 @@
+.link-home{
+
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 15px;
+  border: 1px solid #de07fd;
+  display: flex;
+  width: 100px;
+  margin-top: 20px;
+  a{
+    text-decoration: none;
+    color: #de07fd;
+
+  }
+}
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
