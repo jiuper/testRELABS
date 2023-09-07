@@ -1,21 +1,36 @@
-.link-home{
-
-  font-size: 24px;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 15px;
-  border: 1px solid #de07fd;
-  display: flex;
-  width: 100px;
-  margin-top: 20px;
-  a{
+.link-btn{
+  a {
     text-decoration: none;
-    color: #de07fd;
+    color: #336ef5;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 1px solid #336ef5;
+    display: flex;
+    width: 100px;
+    margin-top: 20px;
 
   }
+
+  a:hover {
+    color: white;
+    background: #336ef5;
+    transition: 0.3s;
+  }
 }
-.content{
+
+
+
+.content {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+}
+
+@media (max-width: 1110px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
 }

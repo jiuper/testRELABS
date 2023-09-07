@@ -12,9 +12,11 @@ export const Shop = () => {
     const listPhone = Array(4).fill("")
     return (
         <div className={cx("m-page")}>
-            <div className={cx("link-home")}>
-                <Link to="/">Назад</Link>
+            <div className={cx("link-btn")}>
+                <Link className={cx("link-home")} to="/">Назад</Link>
             </div>
+
+
             <div className={cx("content")}>
                 {
                     listPhone.map((_, i) =>

@@ -4,11 +4,14 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: #f1f3fb;
+}
+
 .wrapper{
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #f1f3fb;
 }
 
 .container{

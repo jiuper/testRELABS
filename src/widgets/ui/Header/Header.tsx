@@ -10,11 +10,11 @@ export const Header = () => {
     const href = useNavigate()
     const [value, setValue] = useState("0");
 
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    const handleChange = (newValue: string) => {
         setValue(newValue);
     };
     return (
-        <Tabs value={value} onChange={handleChange} className={cx("points")}>
+        <Tabs value={value} onChange={() => handleChange} className={cx("points")}>
             <Tab className={cx("point")} value="0" label="Главная" onClick={() => href(ROUTES.Home)}/>
             <Tab className={cx("point")} value="1" label="Авторизация" onClick={() => href(ROUTES.Login)}/>
             <Tab className={cx("point")} value="2" label="Магазин" onClick={() => href(ROUTES.Marketplace)}/>

@@ -1,29 +1,33 @@
 import {TableCont} from "../Table/Table";
 import {listCellEvent} from "../../const/var";
-import {useHookSelector} from "../../../shared/lib/module/store/configStore";
-import {useGetEventsQuery} from "../../../entities/User/api/fetchEvent";
-import {useEffect, useState} from "react";
-import type {UserItem} from "../../../entities/User/type/user.type";
+import {useEffect} from "react";
 import cnBind from "classnames/bind";
 import styles from "./style.module.scss"
+import useWebSocket from "react-use-websocket";
+import {useHookDispatch, useHookSelector} from "../../../shared/lib/module/store/configStore";
+import {AddEvent} from "../../../entities/User/module/store";
+
 const cx = cnBind.bind(styles)
 
 export const TableEvent = () => {
-    const {} = useGetEventsQuery()
+    const dispatch = useHookDispatch()
+    const {lastMessage} = useWebSocket('wss://test.relabs.ru/event', {
+        onOpen: () => console.log("connect"),
+    });
+
     const socketDate = useHookSelector(state => state.userDataReducer.event)
-    const [userDate, setUserDate] = useState<UserItem[]>([])
 
     useEffect(() => {
-        if (socketDate) {
-            setUserDate([...userDate, socketDate])
-        }
-    }, [socketDate])
+        if (lastMessage)
+            dispatch(AddEvent(JSON.parse(lastMessage.data)))
+    }, [dispatch, lastMessage])
+
     return (
         <div className={cx("tb-event")}>
             <TableCont
                 width={350}
                 listHead={listCellEvent}
-                tableUser={userDate}
+                tableUser={socketDate}
                 isLoading={false}
                 handleFilter={() => {
                 }}

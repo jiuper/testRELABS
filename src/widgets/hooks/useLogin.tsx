@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import type {ILoginValue, UniversalFormState} from "../types/Form.type";
 
-const regExp = /^\S+@\S+\.\S+$/
-const regPass = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+const regExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/
+const regPass = /^(?=.*?[A-Z])(?=.*?[a-z]).{8,}$/
 export const useForm = () => {
 
     const [user, setUser] = useState<UniversalFormState<ILoginValue>>({
@@ -30,18 +30,22 @@ export const useForm = () => {
     ): string | null => {
         switch (true) {
             case type === "email" &&
+            value.trim().length === 0:
+                return "Поле не заполнено";
+            case type === "password" &&
+            value.trim().length === 0:
+                return "Поле не заполнено";
+            case type === "email" &&
             !regExp.test(value.trim()) &&
             value.trim().length > 0:
                 return "Некорректный Email";
             case type === "password" &&
+            value.trim().length < 8:
+                return "Мин. длина 8 символов";
+            case type === "password" &&
             !regPass.test(value.trim()) &&
             value.trim().length > 0:
-                return "Некорректный Пароль";
-            case
-            type !== "email" &&
-            type !== "password" &&
-            value.trim().length === 0:
-                return "Поле не заполнено";
+                return "Некорректный пароль: 1 заглавная буква";
             default:
                 return null;
         }

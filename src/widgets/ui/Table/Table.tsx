@@ -21,10 +21,11 @@ export const TableCont = ({listHead, isLoading, tableUser, handleFilter, width}:
                                 {row.id && <TableCell component="th" scope="row">{row.id}</TableCell>}
                                 {row.name && <TableCell>{row.name}</TableCell>}
                                 {row.role && <TableCell>{row.role}</TableCell>}
-                                {row.ctime && <TableCell>{new Date(1000 * row.ctime).toLocaleString()}</TableCell>}
+                                {row.ctime &&
+                                    <TableCell>{new Date(1000 * row.ctime).toLocaleString().slice(0, -3).replace(",", " ")}</TableCell>}
                                 {row.event && <TableCell>{row.event}</TableCell>}
                                 {row.id && <TableCell style={{cursor: 'pointer'}}
-                                                   onClick={() => handleFilter(row.id)}>Удалить</TableCell>}
+                                                      onClick={() => handleFilter(row.id)}>Удалить</TableCell>}
                             </TableRow>
                         ))
                         : Array(tableUser.length).fill("").map((_, i) =>

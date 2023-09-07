@@ -91,10 +91,16 @@
 
       .btn-buy {
         background: #de07fd;
+        border: 1px solid #de07fd;
         color: #FFFFFF;
         padding: 5px 15px;
         border-radius: 10px;
         font-weight: bold;
+      }
+
+      .btn-buy:hover {
+        background: none;
+        color: #de07fd;
       }
 
       .icon-like {

@@ -1,24 +1,23 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import type {IUserDate} from "../type/user.type";
+import type {IUserDate, UserItem} from "../type/user.type";
 import {getUsers} from "../api/fetchAllUser";
-import type {UserItem} from "../type/user.type";
 
 interface InitDate {
     user: IUserDate | null
-    event: UserItem | null
+    event: UserItem[]
 }
 
 const initialState: InitDate = {
     user: null,
-    event: null,
+    event: [],
 }
 
 export const userData = createSlice({
     name: "userDate",
     initialState,
     reducers: {
-        addEvent(state, action: PayloadAction<UserItem>) {
-            state.event = action.payload
+        AddEvent(state, action: PayloadAction<UserItem>) {
+            state.event.push(action.payload)
         }
     },
     extraReducers: builder => {
@@ -28,5 +27,5 @@ export const userData = createSlice({
     }
 })
 
-export const {addEvent} = userData.actions
+export const {AddEvent} = userData.actions
 export const userDataReducer = userData.reducer

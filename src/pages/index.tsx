@@ -5,7 +5,6 @@ import {Layout} from "../widgets/ui/Layout/Layout";
 import {useEffect} from "react";
 import {Home} from "./Home/Home";
 import {Shop} from "./Shop/Shop";
-import {Header} from "../widgets/ui/Header/Header";
 
 export const Routing = () => {
 
